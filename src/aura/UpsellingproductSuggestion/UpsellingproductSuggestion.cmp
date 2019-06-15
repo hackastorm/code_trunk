@@ -1,0 +1,24 @@
+<!--
+*  Name:         UpsellingproductSuggestion
+*  Purpose:      Component to show UpsellingproductSuggestion to sales rep
+*  Author:       CodeTrunk
+*  Company:      Eternus
+*  Created Date: 15-June-2019
+*  Type:         Component
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+
+    <aura:attribute name="suggestedProductList" type="List" access="public" />
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    
+    <lightning:accordion aura:id="accordion">
+         <aura:iteration items="{!v.suggestedProductList.upsellingProducts}" var="category">
+             {!v.category.Category__c}
+             <lightning:accordionSection label="{!v.category.Category__c}">
+                 <!-- c:ShowProductList products="{!v.category.upsellingProducts}" / -->
+             </lightning:accordionSection>
+         </aura:iteration>
+    </lightning:accordion>
+</aura:component>

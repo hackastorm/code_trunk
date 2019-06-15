@@ -1,0 +1,17 @@
+.THIS .large {
+    height: 100px;
+}
+.THIS .productcard {
+    height: 300px;
+    width: 200px;
+}
+.THIS .x-large {
+    height: 100px;
+    width: 100px;
+}
+.THIS .custom-box {
+    text-align: center;
+    background-color: #f4f6f9;
+    padding: 1rem;
+    border: 1px solid #d8dde6;
+}

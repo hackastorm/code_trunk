@@ -1,0 +1,22 @@
+<!--
+*  Name:         ChildComponent of ShowProductList Component
+*  Purpose:      Component to show List of Contacts in lightning datatable with pagination
+*  Author:       CodeTrunk
+*  Company:      Eternus
+*  Created Date: 15-June-2019
+*  Type:         Component
+-->
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+	<aura:attribute name="product" type="Object" access="public" />
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <div style="{!'background-image:url(\'' + v.product.Image_URL__c + '\')'}" class="innertile">
+            <div class="lower-third">
+                <lightning:formattedText class="slds-truncate" value="{!v.product.Name}" />
+                <lightning:formattedText class="slds-truncate" value="{!v.product.ProductCode}" />
+                <lightning:formattedText class="slds-truncate" value="{!v.product.ProductCode}" />
+                <lightning:formattedText class="slds-truncate" value="{!v.product.Company_Brand__c}" />
+                <lightning:formattedText class="slds-truncate" value="{!v.product.Family}" />
+                <lightning:formattedText class="slds-truncate" value="{!v.product.Description}" />
+            </div>
+    </div>
+</aura:component>

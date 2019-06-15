@@ -1,0 +1,19 @@
+<!--
+*  Name:         ShowProductList
+*  Purpose:      Generalized Component for showing products
+*  Author:       CodeTrunk
+*  Company:      Eternus
+*  Created Date: 15-June-2019
+*  Type:         Component
+-->
+<aura:component >
+    <aura:attribute name="products" type="List" access="public" />
+    <lightning:layout multipleRows="true" horizontalAlign="center">
+        <aura:iteration items="{!v.products}" var="product">
+            <lightning:layoutItem flexibility="grow" size="4" mediumDeviceSize="6"
+                                  largeDeviceSize="3" padding="around-small" class="slds-m-right_small" >   
+                <c:product product="{!product}"/>
+            </lightning:layoutItem>
+        </aura:iteration>
+    </lightning:layout>
+</aura:component>

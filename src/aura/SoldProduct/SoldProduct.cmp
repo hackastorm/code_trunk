@@ -1,0 +1,19 @@
+<aura:component implements ="lightning:isUrlAddressable,force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access ="global"
+                controller ="UpsellingController">
+    
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="showUpsellingProducts" type="Boolean" default="false"/>
+    <aura:attribute name="productlist" type="List" access="public" />
+    <lightning:overlayLibrary aura:id="overlayLib"/>
+    
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    
+    <lightning:button label="{!v.productlist[0].Name}" onclick="{!c.onProductClick}">
+    </lightning:button>
+    <div>
+        <aura:if isTrue = "{!v.showUpsellingProducts}">
+            <c:UpsellingproductSuggestion></c:UpsellingproductSuggestion>
+        </aura:if>
+    </div>
+</aura:component>
